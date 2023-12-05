@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title></title> 
+ <link rel="stylesheet" href="../image/style.css"> 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head> 
+<body> 
+ <div id="container">  
+ <header style="background-color: black;"> 
+ <div id="logo"> 
+ <a href="index.html"> 
+ 
+ </a> 
+ </div> 
+ <nav> 
+ <ul id="topMenu"> 
+  
+    <li><a href="#">홈</a></li>
+    <li><a href="#">서비스</a></li>
+    <li><a href="#">페이지</a></li>
+    <li><a href="#">문의</a></li>
+
+ </ul> 
+ </nav> 
+ </header> 
+ <div class="carousel-indicators">
+  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+</div>
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../image/photo-1.jpg" alt="" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="../image/photo-2.jpg" alt="" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="../image/photo-3.jpg" alt="" class="d-block" style="width:100%">
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+ <div id="contents"> 
+
+ </div>  
+ <footer>  
+ <div id="bottomMenu"> 
+ 
+ 
+ </div> 
+ <div id="company"> 
+ <p>왕십리캠퍼스 : 서울시 성동구 무학로2길 54 신방빌딩 4,5층 tel:12-345-7890s</p> 
+ </div>  
+ </footer>  
+ </div> 
+</body> 
+</html>

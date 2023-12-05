@@ -1,0 +1,81 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <jsp:useBean id="dao" class="memberone.StudentDAO" />  
+    <%String id = request.getParameter("id"); 
+    String pass = request.getParameter("pass"); 
+    
+    int check = dao.loginCheck(id,pass);  
+     
+    %> 
+     
+    <% 
+     
+    if(check == 1){//로그인 성공 
+     
+    session.setAttribute("loginID", id); 
+     
+    response.sendRedirect("login.jsp"); 
+     
+    }else if(check == 0){//아이디는 있는데 비밀번호 오류  
+    %> 
+     
+    <script> 
+     
+    alert("비밀번호가 틀렸습니다"); 
+     
+    history.go(-1); 
+     
+    </script> 
+     
+    <% } else{//아이디 자체가 존재하지 않는 경우%> 
+    	 
+    	<script> 
+    	 
+    	alert("아이디가 존재하지 않습니다"); 
+    	 
+    	history.go(-1); 
+    	 
+    	</script> 
+    	 
+    	<%} %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- <Body> 태그 밑에 아래의 내용을 추가 -->  
+<% if(loginID != null){ %> 
+<table border="1" width="300"> 
+ 
+<tr><td colspan="3" align="center"> 
+ 
+<%=loginID %>님 환영합니다.</td></tr> 
+ 
+<tr> 
+ 
+<td align="center" width="100"> 
+ 
+<a href="modifyForm.jsp">정보수정</a></td>
+ 
+<td align="center" width="100"> 
+ 
+<a href="deleteForm.jsp">회원탈퇴</a></td>
+ 
+<td align="center" width="100"> 
+ 
+<a href="logout.jsp">로그아웃</a></td> 
+ 
+</tr> 
+ 
+</table> 
+ 
+<%}else{ %> 
+ 
+<!-- 기존의 login.jsp 페이지의 내용 --> 
+<% } %>
+
+</body>
+</html>

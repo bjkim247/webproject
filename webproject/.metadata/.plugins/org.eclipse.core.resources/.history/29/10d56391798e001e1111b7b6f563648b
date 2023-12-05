@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>부트스트랩을 이용한 폼 스타일링</title>
+  <!-- 부트스트랩 CDN 추가 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <form method="post" action="/jsptest/VISIT">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label for="writer" class="col-sm-3 col-form-label">작성자</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="writer" name="writer" placeholder="작성자 입력" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="memo" class="col-sm-3 col-form-label">내용</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="memo" name="memo" rows="7" placeholder="내용 입력" required></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12 text-center">
+              <button type="submit" class="btn btn-primary">저장</button>
+              <button type="reset" class="btn btn-secondary">취소</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- 부트스트랩 JS 및 jQuery 추가(선택사항) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

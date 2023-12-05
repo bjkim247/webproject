@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <script type="text/javascript" src="script.js?ver=20231105"></script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>우편번호검색</title><base>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="script.js"></script>
+<script type="text/javascript" src="script.js?ver=20231105"></script>
+</head>
+<body bgcolor="#FFFFCC">
+<b>우편번호 찾기</b>
+<form name="zipForm" method="post" action="zipCheck.jsp">
+<table>
+	<tr>
+	<td>동이름 입력: <input name="dong" type="text"><input type="button" value="검색" onclick="#"></td>
+	</tr>
+</table>
+</form>
+<table> 
+ 
+<script type="text/javascript" src="script.js?ver=20231105"></script>
+<tr><td align="center"> 
+ 
+<a href="javascript:this.close();">닫기</a> 
+ 
+</td></tr> 
+</table>
+</body>
+</html>
