@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=EUC-KR"%> 
+<%@ page contentType="text/html; charset=utf-8"%> 
 <html> 
  
 <head> 
@@ -16,32 +16,32 @@
  
  <tr> 
  
-<td colspan="2" align="center">ȸ�� ���� ���� �Է�</td>  
+<td colspan="2" align="center">회원 가입 정보 입력</td>  
  </tr> 
  
  <tr> 
  
-<td align="right">���̵� : </td> 
+<td align="right">아이디 : </td> 
  
 <td><input type="text" name="id"/>&nbsp; 
-<input type="button" value="�ߺ�Ȯ��" onClick="idCheck(this.form.id.value)"/></td>  
+<input type="button" value="중복확인" onClick="idCheck(this.form.id.value)"/></td>  
  </tr>
  <tr> 
-<td align="right">�н����� : </td> 
+<td align="right">패스워드 : </td> 
  
 <td><input type="password" name="pass"/></td>  
  </tr> 
  
  <tr> 
  
-<td align="right">�н����� Ȯ��: </td> 
+<td align="right">패스워드 확인: </td> 
  
 <td><input type="password" name="repass"/></td>  
  </tr> 
  
  <tr> 
  
-<td align="right">�̸� : </td> 
+<td align="right">이름 : </td> 
  
 <td><input type="text" name="name"/></td> 
  
@@ -49,7 +49,7 @@
  
  <tr> 
  
-<td align="right">��ȭ��ȣ : </td> 
+<td align="right">전화번호 : </td> 
  
 <td> 
  
@@ -71,30 +71,30 @@
  
  <tr> 
  
-<td align="right">�̸��� : </td> 
+<td align="right">이메일 : </td> 
  
 <td><input type="text" name="email"/></td> 
  
  </tr> 
   <tr> 
  
-<td align="right">������ȣ : </td> 
+<td align="right">우편번호 : </td> 
  
 <td><input type="text" name="zipcode"/> 
  
-<input type="button" value="ã��" onClick="zipCheck()"/></td>  
+<input type="button" value="찾기" onClick="zipCheck()"/></td>  
  </tr> 
  
  <tr> 
  
-<td align="right">�ּ�1 : </td> 
+<td align="right">주소1 : </td> 
  
 <td><input type="text" name="address1" size="50"/></td>  
  </tr> 
  
  <tr> 
  
-<td align="right">�ּ�2 : </td> 
+<td align="right">주소2 : </td> 
  
 <td><input type="text" name="address2" size="30"/></td>  
  </tr> 
@@ -102,7 +102,7 @@
  <tr> 
  
 <td colspan="2" align="center">
- <input type="button" value="ȸ������" onClick="inputCheck()"/>&nbsp;&nbsp;<input type="reset" value="�ٽ��Է�"/> 
+ <input type="button" value="회원가입" onClick="inputCheck()"/>&nbsp;&nbsp;<input type="reset" value="다시입력"/> 
  
 </td> 
  

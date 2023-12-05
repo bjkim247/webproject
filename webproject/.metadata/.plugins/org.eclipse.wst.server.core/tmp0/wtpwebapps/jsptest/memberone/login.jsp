@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<% 
+ String loginID = (String)session.getAttribute("loginID"); 
+%> 
+
 <html>
 
 <head>
