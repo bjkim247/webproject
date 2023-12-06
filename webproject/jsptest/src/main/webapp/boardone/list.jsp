@@ -1,42 +1,49 @@
-<%@ page contentType="text/html; charset=euc-kr"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="boardone.BoardDAO"%><%@ page import="boardone.BoardVO"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ include file="view/color.jsp"%>
-<%!// ¼öÁ¤ <1>
+<%!int pageSize = 10; 
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");%>
 <%
-//<¼öÁ¤ 2>
+String pageNum = request.getParameter("pageNum"); 
+if (pageNum == null) { 
+pageNum = "1"; 
+} 
+int currentPage = Integer.parseInt(pageNum); 
+int startRow = (currentPage - 1) * pageSize + 1; 
+int endRow = currentPage * pageSize; 
+
 int count = 0;
 int number = 0;
 List<BoardVO> articleList = null;
 BoardDAO dbPro = BoardDAO.getInstance();
-count = dbPro.getArticleCount();//ÀüÃ¼ ±Û¼ö
+count = dbPro.getArticleCount();//ì „ì²´ ê¸€ìˆ˜
 if (count > 0) {
-	articleList = dbPro.getArticles();//¼öÁ¤<3>
+	articleList = dbPro.getArticleList(startRow, endRow);
 }
-number = count;//¼öÁ¤<4>
+number=count-(currentPage-1)*pageSize;
 %>
 <html>
 <head>
-<title>°Ô½ÃÆÇ</title>
+<title>ê²Œì‹œíŒ</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="<%=bodyback_c%>">
 	<center>
-		<b>±Û¸ñ·Ï(ÀüÃ¼ ±Û:<%=count%>)
+		<b>ê¸€ëª©ë¡(ì „ì²´ ê¸€:<%=count%>)
 		</b>
 		<table width="700">
 			<tr>
 				<td align="right" bgcolor="<%=value_c%>"><a
-					href="writeForm.jsp">±Û¾²±â</a></td>
+					href="writeForm.jsp">ê¸€ì“°ê¸°</a></td>
 		</table>
 		<%
 		if (count == 0) {
 		%>
 		<table width="700" border="1" cellpadding="0" cellspacing="0">
 			<tr>
-				<td align="center">°Ô½ÃÆÇ¿¡ ÀúÀåµÈ ±ÛÀÌ ¾ø½À´Ï´Ù.</td>
+				<td align="center">ê²Œì‹œíŒì— ì €ì¥ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.</td>
 		</table>
 		<%
 		} else {
@@ -45,11 +52,11 @@ number = count;//¼öÁ¤<4>
 			align="center">
 
 			<tr height="30" bgcolor="<%=value_c%>">
-				<td align="center" width="50">¹ø È£</td>
-				<td align="center" width="250">Á¦ ¸ñ</td>
-				<td align="center" width="100">ÀÛ¼ºÀÚ</td>
-				<td align="center" width="150">ÀÛ¼ºÀÏ</td>
-				<td align="center" width="50">Á¶ È¸</td>
+				<td align="center" width="50">ë²ˆ í˜¸</td>
+				<td align="center" width="250">ì œ ëª©</td>
+				<td align="center" width="100">ì‘ì„±ì</td>
+				<td align="center" width="150">ì‘ì„±ì¼</td>
+				<td align="center" width="50">ì¡° íšŒ</td>
 				<td align="center" width="100">IP</td>
 			</tr>
 			<%
@@ -59,8 +66,16 @@ number = count;//¼öÁ¤<4>
 			<tr height="30">
 				<td align="center" width="50"><%=number--%></td>
 				<td width="250">
-					<!-- ¼öÁ¤ <5> --> <a
-					href="content.jsp?num=<%=article.getNum()%>&pageNum=1"> <!-- ¼öÁ¤<6> -->
+					<% 
+ int wid=0;  
+ if(article.getDepth()>0){ 
+ wid=5*(article.getDepth()); 
+ %> 
+ <img src="images/level.gif" width="<%=wid%>" height="16">  <img src="images/re.gif"> 
+<%}else{%> 
+ <img src="images/level.gif" width="<%=wid%>" height="16"> <%}%>
+ <a
+					href="content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
 						<%=article.getSubject()%></a> <%
  if (article.getReadcount() >= 20) {
  %> <img src="images/hot.gif" border="0" height="16">
@@ -82,7 +97,39 @@ number = count;//¼öÁ¤<4>
 		<%
 		}
 		%>
-		<!-- ¼öÁ¤ <7> -->
+		<% 
+ if (count > 0) { 
+ 
+ int pageBlock = 5; 
+ 
+ int imsi = count % pageSize == 0 ? 0 : 1; 
+ 
+ int pageCount = count / pageSize + imsi; 
+ 
+ int startPage = (int)((currentPage-1)/pageBlock)*pageBlock + 1; 
+ int endPage = startPage + pageBlock - 1;
+ if (endPage > pageCount) endPage = pageCount;   if (startPage > pageBlock) { %> 
+ <a href="list.jsp?pageNum=<%=startPage-pageBlock%>">[ì´ì „]</a> 
+<% 
+ 
+ } 
+ 
+ for (int i = startPage ; i <= endPage ; i++) { %>  
+ <a href="list.jsp?pageNum=<%= i %>">[<%= i %>]</a>  
+<% 
+ 
+ } 
+ 
+ if (endPage < pageCount) { %> 
+ <a href="list.jsp?pageNum=<%=startPage+pageBlock%>">[ë‹¤ìŒ]</a> 
+<% 
+ 
+ } 
+ 
+ } 
+ 
+%>
+
 	</center>
 </body>
 </html>
