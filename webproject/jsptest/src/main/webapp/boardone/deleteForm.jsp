@@ -33,8 +33,8 @@ String pageNum = request.getParameter("pageNum");
 
 <body bgcolor="<%=bodyback_c%>">
 
-	<center>
-		<b>글삭제</b><br></br>
+
+		<center><b>글삭제</b><br></br>
 		<form method="POST" name="delForm"
 			action="deleteProc.jsp?pageNum=<%=pageNum%>"
 			onsubmit="return deleteSave()">
@@ -57,8 +57,7 @@ String pageNum = request.getParameter("pageNum");
 
 					<td align=center bgcolor="<%=value_c%>"><input type="submit"
 						value="글삭제"> <input type="button" value="글목록"
-						onclick="document.location.href= 
-'list.jsp?pageNum=<%=pageNum%>'">
+						onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
 					</td>
 
 				</tr>
@@ -66,9 +65,8 @@ String pageNum = request.getParameter("pageNum");
 			</table>
 
 		</form>
-
-	</center>
-
+</center> 
+	
 </body>
 
 </html>

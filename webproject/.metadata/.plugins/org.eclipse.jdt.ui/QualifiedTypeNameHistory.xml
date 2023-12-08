@@ -21,4 +21,14 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="boardone.BoardVO"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponseWrapper"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="mvc.control.ActionForward"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="mvc.control.ActionFactory"/>
+    <fullyQualifiedTypeName name="mvc.action.Action"/>
+    <fullyQualifiedTypeName name="mvc.action.IndexAction"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
 </qualifiedTypeNameHistroy>
